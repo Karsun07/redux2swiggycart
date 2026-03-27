@@ -1,5 +1,5 @@
-import { useState } from "react";
-
+import React,{ useState } from "react";
+import FoodCart from "./foodCart";
 const foodItems = [
     { id: 1, food: "Pizza", price: 300 },
     { id: 2, food: "Momos", price: 400 },
@@ -13,24 +13,14 @@ const foodItems = [
     { id: 10, food: "Khichdi", price: 890 }
 ];
 export default function Card() {
-    const [text,setText]=useState("Add");
-    function textModifier(){
-        if(text=="Add"){
-            setText("Remove");
-        }
-        else{
-            setText("Add");
-        }
-    }
+   
     return (
         <>
            <div className="cards">
              {foodItems.map((value) => {
                 return (
-                    <div key={value.id} className="foods">
-                        <h2>{value.food}</h2>
-                        <h2>₹{value.price}</h2>
-                        <button onClick={textModifier}>{text}</button>
+                    <div key={value.id}>
+                        <FoodCart value={value}/>
                     </div>
                 );
             })}
