@@ -1,5 +1,6 @@
 import React,{ useState } from "react";
 import FoodCart from "./foodCart";
+
 const foodItems = [
     { id: 1, food: "Pizza", price: 300 },
     { id: 2, food: "Momos", price: 400 },
